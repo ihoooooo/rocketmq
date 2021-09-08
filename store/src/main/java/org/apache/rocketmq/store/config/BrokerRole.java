@@ -17,7 +17,10 @@
 package org.apache.rocketmq.store.config;
 
 public enum BrokerRole {
+    // 同步双写Master，主从节点都写入成功，才返回成功
     ASYNC_MASTER,
+    // 异步复制Master，主节点写入成功就返回成功，主从会有短暂毫秒级消息延迟
     SYNC_MASTER,
+    // 从节点
     SLAVE;
 }
